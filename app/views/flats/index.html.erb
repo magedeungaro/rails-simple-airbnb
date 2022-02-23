@@ -1,0 +1,22 @@
+<main class="py-5 px-4">
+  <div class="container w-80">
+    <h2 class="fw-bold">Find the perfect flat for you!</h2>
+
+      <section class="flats">
+        <% @flats.each do |flat| %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-title fs-4"><%= flat.name %></p>
+              <p class="card-text"><%= flat.description %></p>
+              <p class="card-text">
+                <span><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %></span>
+                <span><i class="fas fa-dollar-sign"></i> <%= flat.price_per_night %></span>
+              </p>
+              <%= link_to 'More info', flat_path(flat), class: 'btn btn-outline-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </section>
+
+  </div>
+</main>
